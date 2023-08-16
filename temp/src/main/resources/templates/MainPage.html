@@ -12,7 +12,7 @@
     
     <a href="/main/saleform">판매</a>
     <a href="/main/mypage">마이페이지</a>
-    <a href="/main/admin">관리자페이지</a>
+    <a href="/admin">관리자페이지</a>
     
     <!-- 게시글 -->
 	<div id="articleList"></div>
@@ -32,8 +32,9 @@
                 $.each(data, function(index, article) {
                     var articleHTML = `
                         <div class="article">
-                            <h2>${article.producterTitle}</h2>
+							<h2><a href="/main/sale/${article.id}">${article.producterTitle}</a></h2>
                             <p>${article.producterDetail}</p>
+                            <p>${article.producterPrice}</p> // <- 가격 잘 나와요
                             <img src="/images/${article.producterImage}" alt="Image"> <br>
                         </div>
                     `;
